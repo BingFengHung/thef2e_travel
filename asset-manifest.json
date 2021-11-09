@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/thef2e-travel/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/thef2e-travel/static/js/main.798b0956.chunk.js",
+    "main.js.map": "/thef2e-travel/static/js/main.798b0956.chunk.js.map",
+    "runtime-main.js": "/thef2e-travel/static/js/runtime-main.e0a37df1.js",
+    "runtime-main.js.map": "/thef2e-travel/static/js/runtime-main.e0a37df1.js.map",
+    "static/js/2.e83af35a.chunk.js": "/thef2e-travel/static/js/2.e83af35a.chunk.js",
+    "static/js/2.e83af35a.chunk.js.map": "/thef2e-travel/static/js/2.e83af35a.chunk.js.map",
+    "static/js/3.d0e247c4.chunk.js": "/thef2e-travel/static/js/3.d0e247c4.chunk.js",
+    "static/js/3.d0e247c4.chunk.js.map": "/thef2e-travel/static/js/3.d0e247c4.chunk.js.map",
+    "index.html": "/thef2e-travel/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/thef2e-travel/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.e83af35a.chunk.js.LICENSE.txt": "/thef2e-travel/static/js/2.e83af35a.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/thef2e-travel/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e0a37df1.js",
+    "static/js/2.e83af35a.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.798b0956.chunk.js"
+  ]
+}
