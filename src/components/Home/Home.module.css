@@ -1,3 +1,8 @@
 .home {
+	width: 80%;
+	margin: 0 auto;
+}
 
+.block {
+	margin: 0 0 10px 0;
 }

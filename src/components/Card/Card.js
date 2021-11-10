@@ -10,13 +10,12 @@ function Card(props) {
 			<img src={data.Picture.PictureUrl1} alt={props.Picture?.PictureDescription1}/>
 
 			<div className={style.info}>
-				<p className={style.name}>{data.Name}</p>
+				<p className={style.name}>{data.Name}</p> 
+				<p> 
+					<FontAwesomeIcon icon={faMap}/> 
+					{data.Address} 
+				</p>
 			</div>
-
-			<p> 
-				<FontAwesomeIcon icon={faMap}/> 
-				{data.Address}
-			</p>
 		</div>
 	)
 }

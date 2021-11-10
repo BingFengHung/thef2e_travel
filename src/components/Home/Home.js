@@ -2,33 +2,64 @@ import style from './Home.module.css';
 import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import getData from '../../api/dataFetch';
+import TopicBlock from '../TopicBlock/TopicBlock';
 
 function Home() {
-	const [cardList, setCardList] = useState([])
+	const [scenicSpotList, setScenicSpotList] = useState([])
+	const [restaurantList, setRestaruantList] = useState([])
+	const [hotelList, setHotelList] = useState([])
+	const [activityList, setActivityList] = useState([])
 
 	useEffect(() => {
 		let name = 'Taiwan'
 		let newName = name === 'Taiwan'? '': `/${name}`;
-		let top = 30;
+		let top = 4;
 		let skip = 0;
 
-		let query = `v2/Tourism/ScenicSpot${newName}?$top=${top}&$skip=${skip}&$filter=Picture/PictureUrl1 ne null&$format=JSON`
+		let scenicQuery = `v2/Tourism/ScenicSpot${newName}?$top=${top}&$skip=${skip}&$filter=Picture/PictureUrl1 ne null&$format=JSON`
 		
-		getData(query)
+		getData(scenicQuery)
 		.then(res => {
 			const data = []
 			res.forEach(item => {
 				data.push(<Card data={item}/>)
 			})
 
-			setCardList(data)
+			setScenicSpotList(data)
 		});
+
+		let restaurantQuery = `v2/Tourism/Restaurant${newName}?$top=${top}&$skip=${skip}&$filter=Picture/PictureUrl1 ne null&$format=JSON`
+		getData(restaurantQuery)
+		.then(res => {
+			const data = []
+			res.forEach(item => {
+				data.push(<Card data={item}/>)
+			})
+
+			setRestaruantList(data);
+		})
+
+		let hotelQuery = `v2/Tourism/Hotel${newName}?$top=${top}&$skip=${skip}&$filter=Picture/PictureUrl1 ne null&$format=JSON`;
+		getData(hotelQuery)
+		.then(res => {
+			setHotelList(res.map(item => <Card data={item}/>))
+		})
+
+		let activityQuery = `v2/Tourism/Activity${newName}?$top=${top}&$skip=${skip}&$filter=Picture/PictureUrl1 ne null&$format=JSON`;
+		getData(activityQuery)
+		.then(res => {
+			setActivityList(res.map(item => <Card data={item}/>))
+		})
+
 	}, [])
 
 
 	return (
 		<div className={style.home}>
-			{cardList}
+			<TopicBlock className={style.block} topic='景點' cardList={scenicSpotList}></TopicBlock>
+			<TopicBlock className={style.block} topic='餐飲' cardList={restaurantList}></TopicBlock>
+			<TopicBlock className={style.block} topic='旅宿' cardList={hotelList}></TopicBlock>
+			<TopicBlock className={style.block} topic='活動' cardList={activityList}></TopicBlock>
 		</div>
 	)
 }

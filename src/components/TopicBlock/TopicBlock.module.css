@@ -1,0 +1,40 @@
+.cardList {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title_container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title_container p {
+	margin: auto 0;
+	cursor: pointer;
+}
+
+.title_container p:hover {
+	color: purple;
+}
+
+.titleName {
+	margin: 10px 0;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+}
+
+.titleName::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 0%;
+	background-color: black;
+	transition: .3s;
+}
+
+.titleName:hover::after{
+	width: 100%;
+}
