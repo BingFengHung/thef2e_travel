@@ -10,7 +10,7 @@ function Card(props) {
 	}
 
 	return (
-		<div className={style.card}>
+		<div className={style.card} onClick={() => {}}>
 			<img src={data.Picture.PictureUrl1} alt={data.Picture.PictureDescription1}/>
 
 			<div className={style.info}>

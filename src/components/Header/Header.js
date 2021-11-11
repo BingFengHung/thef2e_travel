@@ -1,6 +1,7 @@
 import style from './Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 const placeName = `台灣:Taiwan
@@ -36,7 +37,9 @@ function Header() {
 
 	return (
 		<div className={style.header}>
-			<p className={style.logo}>Taiwan Have Fun</p> 
+			<Link to={`/thef2e_travel/`}> 
+			  <p className={style.logo}>Taiwan Have Fun</p> 
+			</Link>
 			
 			<div> 
 				<FontAwesomeIcon icon={faSearch}/> 
