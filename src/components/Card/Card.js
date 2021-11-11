@@ -3,11 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMap } from '@fortawesome/free-solid-svg-icons'
 
 function Card(props) {
-	const data = props.data;
+	const data = props.data; 
+	
+	if(!data.Picture.hasOwnProperty('PictureDescription1')) { 
+		data.Picture.PictureDescription1 = 'No Description' 
+	}
 
 	return (
 		<div className={style.card}>
-			<img src={data.Picture.PictureUrl1} alt={props.Picture?.PictureDescription1}/>
+			<img src={data.Picture.PictureUrl1} alt={data.Picture.PictureDescription1}/>
 
 			<div className={style.info}>
 				<p className={style.name}>{data.Name}</p> 
