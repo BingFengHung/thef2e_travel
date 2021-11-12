@@ -1,15 +1,56 @@
-.article {
+.container {
+	margin: auto;
+	width: 60%;
+	max-height: 80%;
+	background-color: #fff;
+  position: relative;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.container .closeBtn {
+	float: right;
+	position: absolute;
+	right: 0;
+	margin: 10px;
+	color: white;
+	cursor: pointer;
+}
+
+.container .closeBtn:hover {
+	color: red;
+}
+
+.container .pictureBox { 
 
 }
+
+
+.container .pictureBox img {
+	width: 100%;
+	height: auto;
+}
+
 
 .tag {
-
+	margin: 10px;
 }
 
-.content {
+.location {
+	display: flex;
+}
 
+.date{
+	display: flex;
+}
+
+.content p {
+	margin: 10px;
 }
 
 .remark {
-
 }

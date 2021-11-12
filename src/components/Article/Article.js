@@ -2,34 +2,41 @@ import style from './Article.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMap } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import eventBus from '../../utils/EventBus';
 
 function Article(props) {
-	if (props.data) {
+	const data = props.data
 
-	let result = props.Remarks.match(/[^0-9. ]+/g);
-
-	// let remarkContent = <ol>{result.map(i => <li>{i}</li>)}</ol>
-	// let list = result.map(i => <li>{i}</li>)	
-
-	return (
-		<div className={style.article}>
-			<img src={props.picUrl} alt={props.picDescribe} />
+	if (data) { 
+		let result = [];
+		if (data.hasOwnProperty('Remark')) { 
+			result = data.Remarks.match(/[^0-9. ]+/g); 
+			// let remarkContent = <ol>{result.map(i => <li>{i}</li>)}</ol> 
+			// let list = result.map(i => <li>{i}</li>)	
+		} 
+		
+		return ( 
+		<div className={style.container}>
+			<div className={style.closeBtn} onClick={() => eventBus.dispatch('closeArticle')}>X</div>
+			<div className={style.pictureBox}> 
+				<img src={data.Picture.PictureUrl1} alt={data.Picture.PictureDescription1} />
+			</div>
 
 			<div className={style.tag}>
-				<div>
+				<div className={style.location}>
 					<FontAwesomeIcon icon={faMap}/>
-					<p>{props.address}</p>
+					<p>{data.Address}</p>
 				</div>
 
-				<div>
+				<div className={style.date}>
 					<FontAwesomeIcon icon={faCalendarAlt}/>
-					<p>{props.updateTime}</p>
+					<p>{data.UpdateTime}</p>
 				</div>
 			</div>
 
 			<div className={style.content}> 
-				<p>{props.Description}</p> 
-				<p>{props.DescriptionDetail}</p>
+				<p>{data.Description}</p> 
+				<p>{data.DescriptionDetail}</p>
 			</div>
 
 			<div className={style.remark}>
