@@ -5,6 +5,11 @@ import { useContext } from 'react';
 
 function Modal() {
 	const context = useContext(AppContext)
+	
+	context.openArticle += (i) => {
+		console.log(i);
+	}
+
 	return (
 		<div>
 			{ <Article data={context.store.hasOwnProperty('data') ? context.store.data: null}/> }

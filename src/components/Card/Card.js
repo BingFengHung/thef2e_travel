@@ -1,8 +1,9 @@
 import style from './Card.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMap } from '@fortawesome/free-solid-svg-icons'
+import eventBus	from '../../utils/EventBus'	
 
-function Card(props) {
+function Card(props) { 
 	const data = props.data; 
 	
 	if(!data.Picture.hasOwnProperty('PictureDescription1')) { 
@@ -10,7 +11,9 @@ function Card(props) {
 	}
 
 	return (
-		<div className={style.card} onClick={() => {}}>
+		<div className={style.card} onClick={() => {
+			eventBus.dispatch('openArticle', data)
+		}}>
 			<img src={data.Picture.PictureUrl1} alt={data.Picture.PictureDescription1}/>
 
 			<div className={style.info}>
