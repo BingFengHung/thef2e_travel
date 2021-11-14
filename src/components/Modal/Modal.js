@@ -11,7 +11,6 @@ function Modal(props) {
 
 	eventBus.on('openArticle', () => { 
 		setDisplay(style.display)
-		console.log(style.display)
 	})
 
 	eventBus.on('closeArticle', () => {

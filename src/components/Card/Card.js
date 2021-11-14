@@ -14,7 +14,7 @@ function Card(props) {
 	}
 
 	return (
-		<div className={style.card} onClick={() => {
+		<div className={style.card + ' ' + props.className} onClick={() => {
 			eventBus.dispatch('openArticle', data) 
 			context.actions.passData(data)
 

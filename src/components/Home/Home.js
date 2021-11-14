@@ -24,7 +24,7 @@ function Home() {
 		.then(res => {
 			const data = []
 			res.forEach((item, idx) => {
-				data.push(<Card key={idx} data={item}/>)
+				data.push(<Card className={style.card} key={idx} data={item}/>)
 			})
 
 			setScenicSpotList(data)
@@ -58,10 +58,10 @@ function Home() {
 
 	return (
 		<div className={style.home}>
-			<TopicBlock className={style.block} title='景點' topic={topics[0]} cardList={scenicSpotList}></TopicBlock>
-			<TopicBlock className={style.block} title='餐飲' topic={topics[1]} cardList={restaurantList}></TopicBlock>
-			<TopicBlock className={style.block} title='旅宿' topic={topics[2]} cardList={hotelList}></TopicBlock>
-			<TopicBlock className={style.block} title='活動' topic={topics[3]} cardList={activityList}></TopicBlock>
+			<TopicBlock className={style.block}  topic={topics[0]} cardList={scenicSpotList}></TopicBlock>
+			<TopicBlock className={style.block}  topic={topics[1]} cardList={restaurantList}></TopicBlock>
+			<TopicBlock className={style.block}  topic={topics[2]} cardList={hotelList}></TopicBlock>
+			<TopicBlock className={style.block}  topic={topics[3]} cardList={activityList}></TopicBlock>
 		</div>
 	)
 }

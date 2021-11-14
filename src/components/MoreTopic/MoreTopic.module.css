@@ -1,9 +1,55 @@
 .wrapper {
+	width: 80%;
 	margin: 0 auto;
-	width: 60%;
+	justify-content: center;
+}
+
+.wrapper button {
+	display: block;
+	width: 100%;
+	border: none;
+	background-color: #04AA6D;
+	padding: 14px 28px;
+	margin: 0 auto;
+	font-size: 1rem;
+	cursor: pointer;
+	text-align: center;
+	margin: 10px;
+	color: white;
+}
+
+.card {
+	margin: 10px;
 }
 
 .container {
-	display: flex;
+	display: inline-flex;
 	flex-wrap: wrap;
+	gap: 12px;
+	justify-content: center;
+}
+
+/* Big Tablet to 1200px (width smaller than 1140px row */
+@media screen and (max-width: 1200px) {
+	.wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+ 
+/* Small Tablet to Big Tablet from 768 to 1023px */
+@media screen and (max-width: 1023px) {
+	.wrapper {
+		width: 80%;
+	}
+}
+ 
+/* Small Phones to small Tablet 481-767px(Ipad) */
+@media screen and (max-width: 767px) {
+
+}
+ 
+/* Small Phones 0 to 480px(Iphone) */
+@media screen and (max-width: 480px) {
+
 }

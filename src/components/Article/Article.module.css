@@ -1,7 +1,7 @@
 .container {
 	margin: auto;
-	width: 60%;
-	max-height: 80%;
+	width: 40%;
+	max-height: 90%;
 	background-color: #fff;
   position: relative;
 	left: 0;
@@ -25,14 +25,12 @@
 	color: red;
 }
 
-.container .pictureBox { 
-
-}
 
 
 .container .pictureBox img {
 	width: 100%;
-	height: auto;
+	max-height: 60%;
+	object-fit: contain;
 }
 
 
@@ -53,4 +51,31 @@
 }
 
 .remark {
+}
+
+@media screen and (max-width: 1200px) {
+	.container { 
+		width: 40%;
+	}
+}
+ 
+/* Small Tablet to Big Tablet from 768 to 1023px */
+@media screen and (max-width: 1023px) {
+	.container { 
+		width: 50%;
+	}
+
+}
+ 
+/* Small Phones to small Tablet 481-767px(Ipad) */
+@media screen and (max-width: 767px) {
+	.container { 
+		width: 60%;
+	}
+
+}
+ 
+/* Small Phones 0 to 480px(Iphone) */
+@media screen and (max-width: 480px) {
+
 }
